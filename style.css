@@ -66,6 +66,7 @@ body {
   position: relative;
   width: 64px;
   margin: 0 auto;
+  
 }
 
 #switch button {
@@ -80,12 +81,12 @@ body {
   top: 50%;
   z-index: 1;
   transform: translateY(-50%);
+  animation: slide-out 0.4s;
   
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+ animation: slide-in 0.4s forwards;
 }
 
 #switch span {
@@ -161,4 +162,24 @@ ul li a:hover {
   padding-top: 50px;
   padding-bottom: 50px;
   text-align: center;
+}
+
+/* animação */
+
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-out {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
 }
